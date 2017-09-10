@@ -13,7 +13,7 @@
 
 enum Rank // An enumeration type
 {
-	Ace, // An enumerator
+	Ace = 1, // An enumerator
 	Two,
 	Three,
 	Four,
@@ -36,9 +36,40 @@ enum Suit
 	Spades,
 };
 
-struct Card
+class Card
 {
-	const Rank rank;
-	const Suit suit;
+public:
+	// Default constructor
+	Card() {}
+
+	// constructor for a card
+	Card(Rank r, Suit s)
+		: rank(r), suit(s) // member initializer list
+	{
+	}
+
+	//getter functions
+	Rank get_rank()
+	{
+		return rank;
+	}
+	Suit get_suit()
+	{
+		return suit;
+	}
+
+	//setter functions
+	Rank set_rank(Card c, Rank r)
+	{
+		c.rank = r;
+	}
+	Rank set_suit(Card c, Suit s)
+	{
+		c.suit = s;
+	}
+
+	private:
+		Rank rank;
+		Suit suit;
 };
 
